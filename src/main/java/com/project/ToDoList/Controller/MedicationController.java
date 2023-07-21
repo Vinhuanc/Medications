@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.text.ParseException;
 
 @Controller
-public class ListController {
+public class MedicationController {
     private MedicationService service;
 
-    public ListController(MedicationService service) {
+    public MedicationController(MedicationService service) {
         this.service = service;
     }
 
