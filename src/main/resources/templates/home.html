@@ -12,6 +12,27 @@
     </style>
 </head>
 <body>
+
+<form class="content" th:object="${medication}" th:action="@{/home}" th:method="POST">
+    <div class="mb-3">
+        <label for="newID" class="form-label">Generic Name:</label>
+        <input th:field="*{id}" type="input" name="id" class="form-control" id="newid" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="newGeneric" class="form-label">Generic Name:</label>
+        <input th:field="*{genericName}" type="input" name="genericName" class="form-control" id="newGeneric" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="newBrand" class="form-label">Brand Name:</label>
+        <input th:field="*{brandName}" type="input" name="brandName" class="form-control" id="newBrand">
+    </div>
+    <div class="mb-3">
+        <label for="newPurpose" class="form-label">Main Purpose:</label>
+        <input th:field="*{mainPurpose}"type="input" name="mainPurpose" class="form-control" id="newPurpose">
+    </div>
+    <button type="submit" class="btn btn-primary">Add medication</button>
+</form>
+
 <div class="content">
 <h2 th:text="${message}">Hello world!</h2>
 <table class="table">
@@ -29,7 +50,7 @@
             <th scope="row" th:text="${iterator.index} + 1"></th>
             <td th:text="${medication.genericName}"></td>
             <td th:text="${medication.brandName}"></td>
-            <td th:text="${medication.purpose}"></td>
+            <td th:text="${medication.mainPurpose}"></td>
 
         </tr>
 
