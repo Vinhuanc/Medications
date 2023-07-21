@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        .content{
+            max-width:800px;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+<h2 th:text="${message}">Hello world!</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Generic Name:</th>
+            <th scope="col">Brand Name:</th>
+            <th scope="col">Main purpose:</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="medication, iterator : ${medications}">
+            <th scope="row" th:text="${iterator.index} + 1"></th>
+            <td th:text="${medication.genericName}"></td>
+            <td th:text="${medication.brandName}"></td>
+            <td th:text="${medication.purpose}"></td>
+
+        </tr>
+
+    </tbody>
+</table>
+</div>
+
+</body>
+</html>
