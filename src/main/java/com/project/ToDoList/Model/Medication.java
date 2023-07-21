@@ -5,14 +5,24 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Medication {
+    private Integer id;
     private String genericName;
     private String brandName;
-    private String purpose;
+    private String mainPurpose;
 
-    public Medication(String genericName, String brandName, String purpose) {
+    public Medication(Integer id, String genericName, String brandName, String mainPurpose) {
+        this.id = id;
         this.genericName = genericName;
         this.brandName = brandName;
-        this.purpose = purpose;
+        this.mainPurpose = mainPurpose;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getGenericName() {
@@ -31,11 +41,13 @@ public class Medication {
         this.brandName = brandName;
     }
 
-    public String getPurpose() {
-        return purpose;
+    public String getMainPurpose() {
+        return mainPurpose;
     }
 
-    public void setPurpose(String purpose) {
-        this.purpose = purpose;
+    public void setMainPurpose(String mainPurpose) {
+        this.mainPurpose = mainPurpose;
     }
+
+
 }
